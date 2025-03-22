@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2eff4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4e3bb1;
+            color: white;
+            padding: 15px 50px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        .logo-image {
+            height: 40px;
+            max-width: 60%;
+            object-fit: contain;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-button {
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-button:hover {
+            background-color: #5842b3;
+        }
+
+        /* Embedded Experience Page */
+        .exp-container {
+            width: 100%;
+            height: calc(100vh - 60px);
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/logo.png" class="logo-image" alt="Logo">
+        <div class="nav-buttons">
+            <a href="http://localhost:5174" class="nav-button">Chat</a>
+            <a href="http://localhost:5175" class="nav-button">Study Planner</a>
+            <a href="user_profile.php" class="nav-button">My Profile</a>
+        </div>
+    </div>
+    
+    <!-- Embedded Experience Page -->
+    <div class="exp-container">
+        <iframe src="http://localhost:5173/Audio"></iframe>
+    </div>
+</body>
+</html>

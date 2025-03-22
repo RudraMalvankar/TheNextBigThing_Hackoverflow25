@@ -1,0 +1,49 @@
+<?php
+session_start();
+require 'db_config.php';
+
+
+// Ensure user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Stripe API keys
+\Stripe\Stripe::setApiKey(STRIPE_SECRET);
+
+$user_id = $_SESSION['user_id'];
+$email = $_SESSION['email']; // Make sure email is stored in session
+$customer = \Stripe\Customer::create([
+    'email' => $email, // ✅ Correct user email
+]);
+
+try {
+    // Create Stripe Checkout Session with a 7-day trial
+    $checkout_session = \Stripe\Checkout\Session::create([
+        'payment_method_types' => ['card'],
+        'line_items' => [[
+            'price' => 'price_1R2SyBSBfXJhVNZFvKXI85ly', // ✅ Your Stripe Price ID
+            'quantity' => 1,
+        ]],
+        'mode' => 'subscription', // Ensures recurring payment
+        //'customer_email' => $email, // Auto-fills email
+        'billing_address_collection' => 'required', // 🔥 Forces billing address input
+        'shipping_address_collection' => [
+            'allowed_countries' => ['IN'], // Modify as needed
+        ],
+        // 'subscription_data' => [
+        //     'trial_period_days' => 7, // ✅ Adds a 7-day trial period
+        //],
+        'success_url' => 'http://localhost/bytecamp/success.php?session_id={CHECKOUT_SESSION_ID}',
+        'cancel_url' => 'http://localhost/bytecamp/cancel.php',
+    ]);
+
+    // Redirect user to Stripe Checkout
+    header("Location: " . $checkout_session->url);
+    exit();
+}
+ catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>

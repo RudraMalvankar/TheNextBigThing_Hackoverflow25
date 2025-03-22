@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Brands - Transforming Your Digital Presence</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sticky Header */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: #ffffff;
+            padding: 15px 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #45a049, #4CAF50);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+
+        .cta {
+            padding: 12px 25px;
+            background: white;
+            color: #4CAF50;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .cta:hover {
+            background: #ddd;
+        }
+
+        /* Features Section */
+        .features {
+            background: #f9f9f9;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .feature-box {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+       /* Pricing Section */
+       .pricing {
+            text-align: center;
+            padding: 80px 20px;
+            background: #f9f9f9;
+        }
+
+        .pricing h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .plan {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .plan:hover {
+            transform: translateY(-5px);
+        }
+
+        .plan h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 15px 0;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .features li {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #45a049;
+        }
+
+
+        /* About Us Section */
+        .about {
+            background: #f9f9f9;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-form {
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #45a049;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Header -->
+    <header class="header">
+        <div class="logo">Your Brands</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="login.php">Login</a>
+        </nav>
+    </header>
+
+   <!-- Hero Section -->
+<section class="hero">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1>Innovate. Elevate. Transform.</h1>
+            <p>Your one-stop solution for managing workflows, projects, and growth effortlessly.</p>
+            <a href="login.php" class="cta" style="padding-bottom: 20px;">Get Started</a>
+        </div>
+        <div class="hero-spline" style="padding-top:29px;">
+            <spline-viewer url="https://prod.spline.design/FVZWbQH2B6ndj9UU/scene.splinecode" events-target="global"></spline-viewer>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="feature-box">
+            <div class="feature">
+                <h3>AI-Powered Analytics</h3>
+                <p>Our advanced AI helps you analyze and optimize your processes.</p>
+            </div>
+            <div class="feature">
+                <h3>Seamless Collaboration</h3>
+                <p>Work with teams efficiently and get real-time updates.</p>
+            </div>
+            <div class="feature">
+                <h3>Top-notch Security</h3>
+                <p>We provide enterprise-level encryption and data protection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table pricing-table-id="prctbl_1R2TroSBfXJhVNZFD9CW0Z2D"
+    publishable-key="pk_test_51Nver8SBfXJhVNZFDJLl6beluy5mv5jfMImMEdrNxhPetSjOnoAfEykskhXmWXwlj5UfOjuIJ86ZBKyDE8Ko274C00WHHjC0jX">
+    </stripe-pricing-table>
+   <!-- <section class="pricing">
+        <h2>Choose Your Plan</h2>
+        <div class="pricing-container">
+           
+            <div class="plan">
+                <h3>Free Plan</h3>
+                <p class="price">$0/month</p>
+                <ul class="features">
+                    <li>✔ Basic Features</li>
+                    <li>✔ Limited Access</li>
+                    <li>✔ Community Support</li>
+                </ul>
+                <a href="#" class="cta-btn">Get Free</a>
+            </div>
+
+            
+            <div class="plan">
+                <h3>Premium Plan</h3>
+                <p class="price">$9.99/month</p>
+                <ul class="features">
+                    <li>✔ Unlimited Access</li>
+                    <li>✔ Premium Support</li>
+                    <li>✔ Exclusive Features</li>
+                </ul>
+                <a href="#" class="cta-btn">Get Premium</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-form">
+            <label>Name:</label>
+            <input type="text" placeholder="John Doe">
+            <label>Email:</label>
+            <input type="email" placeholder="john@example.com">
+            <label>Message:</label>
+            <textarea placeholder="Type your message here..."></textarea>
+            <button>Send Message</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; 2025 Your Brands - All Rights Reserved.
+    </footer>
+
+</body>
+</html>
